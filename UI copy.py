@@ -20,19 +20,16 @@ class MyWindow:
         self.b1.place(x=100, y=50) # no size so it makes size based on text length
         #self.b2.place(x=100, y=140) # no size so it makes size based on text length
     def spin(self):
-        for x in range(10):
-            self.lbl1["text"] = str(random.randrange(0, 9, 1))
-            time.sleep(0.25)
-        for y in range(10):
-            self.lbl2["text"] = str(random.randrange(0, 9, 1))
-            time.sleep(0.25)
-        for z in range(10):
-            self.lbl3["text"] = str(random.randrange(0, 9, 1))
-            time.sleep(0.25)
+        eee = str(random.randrange(100, 999, 1))
+        ee = list(eee)
+        self.lbl1["text"]=str(ee[0])
+        self.lbl2["text"]=str(ee[1])
+        self.lbl3["text"]=str(ee[2])
 
         if self.lbl1["text"] == self.lbl2["text"] and self.lbl2["text"] == self.lbl3["text"]:
             winstatement = "You win "+jackpotamount+"! \nTry again to perhaps earn more..?"
             self.lbl4["text"]=winstatement
+            print("Win!")
         else:
             self.lbl4["text"]="You lose, try again."
             
